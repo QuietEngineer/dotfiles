@@ -1,0 +1,8 @@
+[user]
+	name = QuietEngineer
+	email = qtengineer@proton.me
+[pull]
+	rebase = true
+	ff = true
+[init]
+	defaultBranch = main
