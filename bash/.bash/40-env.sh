@@ -1,4 +1,4 @@
-if which nvim &>/dev/null: then
+if which nvim &>/dev/null; then
     export EDIT=${EDIT:-nvim}
     alias vim=nvim
 elif which vim &>/dev/null; then
