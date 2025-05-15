@@ -13,3 +13,6 @@ vim.o.shiftwidth=4
 vim.o.scrolloff = 5
 
 vim.o.spelllang = 'en_us'
+
+-- sync with system clipboard
+vim.o.clipboard = 'unnamed'
