@@ -4,7 +4,7 @@ QuietEngineer's dotfiles: just add water
 
 Created from a cocktail of sources including:
 
-- [fadein/homedir](https://github.com/fadein/dotbash/)
+- [fadein/homedir](https://github.com/fadein/homedir/)
 - [endeavouros-team](https://github.com/endeavouros-team)
 - [EndeavourOS-Community-Editions/sway](https://github.com/EndeavourOS-Community-Editions/sway)
 
