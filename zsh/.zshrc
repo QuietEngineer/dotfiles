@@ -8,4 +8,4 @@ done
 unset F
 
 # Load custom stuff from a host-specific zshrc (if marked executable)
-[[ -x ~/.$HOSTNAME.zshrc ]] && source ~/.$HOSTNAME.zshrc
+[[ -x $HOME/.${HOST}.zshrc ]] && source $HOME/.${HOST}.zshrc
