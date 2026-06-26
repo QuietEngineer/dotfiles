@@ -1,6 +1,9 @@
-[[ $commands[atuin] ]] && source <(atuin gen-completions --shell zsh)
-[[ $commands[jj] ]] && source <(COMPLETE=zsh jj)
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+# The following lines were added by compinstall
+zstyle :compinstall filename '$HOME/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # Instead of using `source` on every startup, permanently install with below commands.
 # User dir may be swapped for system dir `/usr/local/share/zsh/site-functions/` to make
@@ -15,16 +18,13 @@
 # ```
 #
 # Add user dir to `fpath` so completion functions are loaded automatically on startup.
-# Must run before `compinit`.
+# Must run before `compinit` and the section added by compinstall.
+#
+# fpath=(
+#     ~/.local/share/zsh/site-functions/
+#     $fpath
+# )
 
-fpath=(
-    ~/.local/share/zsh/site-functions/
-    $fpath
-)
-
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/quietengineer/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+[[ $commands[atuin] ]] && source <(atuin gen-completions --shell zsh)
+[[ $commands[jj] ]] && source <(COMPLETE=zsh jj)
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
