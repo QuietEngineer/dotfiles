@@ -20,9 +20,13 @@ bind '"\e[B":history-search-forward'
 [[ -f /etc/bashrc ]] && source /etc/bashrc
 
 # Source my modularized dotfiles
-for F in ~/.bash/[0-9][0-9]-*.sh; do
-    [[ -x $F ]] && source $F
-done
-
-# run site-specific stuff in .site-bashrc
-[[ -r $HOME/.${HOSTNAME}-bashrc ]] && source $HOME/.${HOSTNAME}-bashrc
+if [ -d ~/.config/bashrc.d ]; then
+    for rc in ~/.config/bashrc.d/*.sh; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+    # run site-specific stuff in .site-bashrc
+    [[ -r "~/.config/bashrc.d/${HOSTNAME}-bashrc" ]] && . "~/.config/bashrc.d/${HOSTNAME}-bashrc"
+fi
+unset rc
