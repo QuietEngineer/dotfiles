@@ -81,5 +81,5 @@ else
 	HERE=$(dirname $(readlink -f $0))
 
 	# Link these files and directories into $HOME
-	linkToHome $HERE/.gitconfig .gitconfig
+	linkToHome $HERE/dot-gitconfig .gitconfig
 fi
