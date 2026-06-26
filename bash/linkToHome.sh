@@ -75,7 +75,7 @@ fi
 
 if [ 0"$1" = 0"-r" ]; then
 	# Clean up old symlinks
-	removeLink .bash
+	removeLink .config/bashrc.d
 	removeLink .bashrc
 	removeLink .bash_profile
 else
@@ -83,7 +83,7 @@ else
 	HERE=$(dirname $(readlink -f $0))
 
 	# Link these files and directories into $HOME
-	linkToHome $HERE/.bash          .bash
-	linkToHome $HERE/.bashrc        .bashrc
-	linkToHome $HERE/.bash_profile  .bash_profile
+	linkToHome $HERE/dot-config/bashrc.d .config/bashrc.d
+	linkToHome $HERE/dot-bashrc          .bashrc
+	linkToHome $HERE/dot-bash_profile    .bash_profile
 fi
